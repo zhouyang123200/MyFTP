@@ -1,0 +1,49 @@
+程序说明：此程序实现了ftp功能支持多用户，允许文件上传和下载，显示进度条，支持断点续传。
+
+注意：(1) 由于程序使用了prompt_toolkit第三方模块用于实现在上传文件时可以同时输入命令的功能，所以得事先安装prompt_
+	toolkit模块。
+      (2) 由于使用了 prompt_toolkit 所以客户端必须在 cmd 终端下使用 python3 client.py 执行，服务端无所谓。
+      (3) 用于使用了pickel模块存储用户对象，而且每个人的电脑文件的绝对路径不一样，所以得运行服务端得重新注册用户，
+	不能使用以前的用户数据。
+
+.
+├── bin
+│   ├── client.py	# 客户端运行的起始程序
+│   ├── ftp.py		# 服务端运行的起始程序
+│   └── __init__.py
+├── conf		# 配置文件
+│   ├── __init__.py
+│   └── settings.py
+├── core		# 主程序代码
+│   ├── client_main.py	# 客户端程序
+│   ├── __init__.py
+│   ├── logger.py
+│   ├── models.py	# 项目中所有的类
+│   └── server_main.py	# 服务端程序
+├── db
+│   ├── download	# 客户端下载文件的文件夹
+│   │   ├── book.txt
+│   │   ├── __init__.py
+│   │   ├── move.rmvb
+│   │   ├── picture.BMP
+│   │   └── video.mp4
+│   ├── __init__.py
+│   ├── usr_data				# 用户验证数据
+│   │   ├── c5266628-9409-11e6-978d-f0def1ac6433
+│   │   └── cc31044c-8d76-11e6-bb05-005056c00008
+│   └── usrfiledata				# 用户存储的数据
+│       ├── c5266628-9409-11e6-978d-f0def1ac6433
+│       │   └── video.mp4
+│       └── cc31044c-8d76-11e6-bb05-005056c00008
+│           ├── name
+│           │   ├── name1
+│           │   ├── name2
+│           │   └── video.mp4
+│           └── video
+│               └── video.mp4
+├── __init__.py
+├── log			# 服务端文件日志
+│   ├── __init__.py
+│   └── 服务器处理请求日志.log
+└── readme
+
